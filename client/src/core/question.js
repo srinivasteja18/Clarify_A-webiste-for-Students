@@ -306,7 +306,7 @@ export default function Question() {
   );
 
   const handleAnswerDelete = (answer) => {
-    if (user._id !== question.user._id) {
+    if (user._id !== answer.user._id) {
       toast("You cannot delete this Post", { type: "warning" });
       return;
     }
