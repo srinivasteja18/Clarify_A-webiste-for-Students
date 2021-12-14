@@ -768,6 +768,9 @@ input:focus {
 }
 
 @media (max-width: 600px) {
+  .whole-container {
+    width: fit-content;
+  }
   .nav-container {
     max-width: 100%;
   }
