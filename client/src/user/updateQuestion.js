@@ -12,7 +12,6 @@ import { updateQuestion } from "../core/helper/coreApiCalls";
 
 export default function UpdateQuestion() {
   const location = useLocation();
-  console.log(location);
   const { user, token } = isAuthenticated();
   const navigate = useNavigate();
   const [state, setState] = useState(EditorState.createEmpty());
@@ -48,17 +47,15 @@ export default function UpdateQuestion() {
     const data = JSON.stringify(createMarkup(convertedContent));
     question.description = data;
     setQuestion(question);
-    console.log(question);
     updateQuestion(user._id, token, question).then((data) => {
       if (data.error) {
         console.log("Failed to edit your question", data.error);
       } else {
         toast("Question Updated succesfully!!", { type: "success" });
-        navigate("/questions/question");
+        navigate("/questions");
       }
     });
   };
-  console.log(question);
   const contentSection = () => (
     <div className="questions-container editor-helper">
       <h1>Edit Your Question</h1>
