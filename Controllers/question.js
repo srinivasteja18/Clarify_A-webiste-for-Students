@@ -65,7 +65,7 @@ exports.getUserQuestions = (req, res) => {
 };
 
 exports.updateQuestion = (req, res) => {
-  if (req.profile._id !== req.question.user._id) {
+  if (!req.profile._id.equals(req.question.user._id)) {
     return res.status(400).json({
       error: "You cannot Edit this question",
     });
@@ -86,7 +86,8 @@ exports.updateQuestion = (req, res) => {
 };
 
 exports.deleteQuestion = (req, res) => {
-  if (req.profile._id !== req.question.user._id) {
+  console.log(req.profile._id, req.question.user._id);
+  if (!req.profile._id.equals(req.question.user._id)) {
     return res.status(400).json({
       error: "You cannot delete this question",
     });
