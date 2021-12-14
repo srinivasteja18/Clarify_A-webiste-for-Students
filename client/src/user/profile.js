@@ -126,7 +126,7 @@ export default function Profile() {
                 <div className="profile-reputation">
                   <div className="profile-stat">
                     <p className="profile-stat-number">{handleReputation()}</p>
-                    <p style={{ margin: "0" }}>Reqputation</p>
+                    <p style={{ margin: "0" }}>Reputation</p>
                   </div>
                 </div>
               </div>
