@@ -21,8 +21,8 @@ export default function About() {
           <p className="about-description">
             Iam Srinivas Teja, A pre-final year student from NIT Raipur. Clarify
             starts with an idea to help students. Students can post their
-            queries, anything that can be related to whether its acedemic,
-            programming, development, or it may be non-acedemic about collages
+            queries, anything that can be related to whether its academic,
+            programming, development, or it may be non-academic about collages
             etc. Anyone can answer to the questions that are posted by the
             others, And I believe sharing knowledge is the best thing that we
             can do. My motive is to provide a platform for all these type of

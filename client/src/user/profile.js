@@ -55,6 +55,22 @@ export default function Profile() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const handleReputation = () => {
+    let val = 0;
+    if (activities.length) {
+      activities.map((activity) => (val += activity.question.upvotes));
+    }
+    return val;
+  };
+
+  const handleQuestions = () => {
+    let val = 0;
+    if (activities.length) {
+      activities.map((activity) => (val += activity.status === "asked"));
+    }
+    return val;
+  };
+
   const profileSection = () => (
     <div className="profile-container">
       {loading ? (
@@ -97,18 +113,20 @@ export default function Profile() {
                 <h2>Stats</h2>
                 <div className="profile-stats-info">
                   <div className="profile-stat">
-                    <p className="profile-stat-number">7</p>
+                    <p className="profile-stat-number">{handleQuestions()}</p>
                     <p style={{ margin: "0" }}>questions</p>
                   </div>
                   <div className="profile-stat">
-                    <p className="profile-stat-number">0</p>
+                    <p className="profile-stat-number">
+                      {activities.length - handleQuestions()}
+                    </p>
                     <p style={{ margin: "0" }}>answers</p>
                   </div>
                 </div>
                 <div className="profile-reputation">
                   <div className="profile-stat">
-                    <p className="profile-stat-number">{profile.reputation}</p>
-                    <p style={{ margin: "0" }}>Reputation</p>
+                    <p className="profile-stat-number">{handleReputation()}</p>
+                    <p style={{ margin: "0" }}>Reqputation</p>
                   </div>
                 </div>
               </div>

@@ -104,6 +104,8 @@ exports.updateUpvotes = (req, res) => {
     });
   }
   if (flag) return;
+  const admin = req.question.user;
+  admin.reputation -= 1;
   let downvotes = [];
   if (user.adownvotes.length)
     downvotes = user.adownvotes.filter(
@@ -124,8 +126,16 @@ exports.updateUpvotes = (req, res) => {
           return res.status(400).json({
             error: "Failed to update User",
           });
+        } else {
+          admin.save((err, updatedUser) => {
+            if (err) {
+              return res.status(400).json({
+                error: "Failed to update User",
+              });
+            }
+            res.json(updatedAnswer);
+          });
         }
-        res.json(updatedAnswer);
       });
     }
   });
@@ -147,6 +157,8 @@ exports.updateDownvotes = (req, res) => {
     });
   }
   if (flag) return;
+  const admin = req.answer.user;
+  admin.reputation -= 1;
   let upvotes = [];
   if (user.qupvotes.length)
     upvotes = user.qupvotes.filter(
@@ -168,8 +180,16 @@ exports.updateDownvotes = (req, res) => {
           return res.status(400).json({
             error: "Failed to update User",
           });
+        } else {
+          admin.save((err, updatedUser) => {
+            if (err) {
+              return res.status(400).json({
+                error: "Failed to update User",
+              });
+            }
+            res.json(updatedAnswer);
+          });
         }
-        res.json(updatedAnswer);
       });
     }
   });
