@@ -128,7 +128,7 @@ input:focus {
 /* sidebar styling */
 .middle-section {
   padding: 2rem 0;
-  min-width: 70%;
+  width: 70%;
   margin: 0 auto;
   display: flex;
   height: 600px;
@@ -768,11 +768,6 @@ input:focus {
 }
 
 @media (max-width: 600px) {
-  .whole-container {
-    width: fit-content;
-    margin: 0 auto;
-  }
-
   .nav-container {
     max-width: 100%;
   }
@@ -790,6 +785,7 @@ input:focus {
     max-width: 100%;
     margin: 1rem 0;
     padding: 0;
+    width: 100%;
   }
   .side-bar {
     max-width: 98%;
@@ -961,5 +957,11 @@ input:focus {
   .footer-section {
     flex-direction: column;
     gap: 1rem;
+  }
+}
+@media (max-width: 400px) {
+  .whole-container {
+    width: fit-content;
+    margin: 0 auto;
   }
 }
