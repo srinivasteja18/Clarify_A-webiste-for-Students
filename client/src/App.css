@@ -198,6 +198,11 @@ input:focus {
 .questions-container {
   padding: 1rem;
 }
+.q-wrapper {
+  display: flex;
+  gap: 1rem;
+  flex: 1;
+}
 .question-card {
   border: 1px solid #333333;
   border-right: 2px solid #1f6feb;
