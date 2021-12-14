@@ -1,0 +1,38 @@
+{
+  "name": "clarify-backend",
+  "version": "1.0.0",
+  "description": "A website for clarifying the doubts",
+  "main": "index.js",
+  "scripts": {
+    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
+    "client": "cd client && npm start",
+    "client:build": "cd client && npm run build",
+    "start": "nodemon app.js",
+    "dev": "concurrently --kill-others-on-fail \"npm run client\" \"npm run start\""
+  },
+  "dependencies": {
+    "better-react-spinkit": "^2.0.4",
+    "body-parser": "^1.19.0",
+    "concurrently": "^6.4.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dompurify": "^2.3.4",
+    "dotenv": "^8.6.0",
+    "draft-convert": "^2.1.12",
+    "draft-js": "^0.11.7",
+    "express": "^4.17.1",
+    "express-jwt": "^5.3.3",
+    "express-validator": "^6.13.0",
+    "formidable": "^1.2.6",
+    "i": "^0.3.7",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.21",
+    "mongoose": "^5.13.13",
+    "nodemon": "^1.19.4",
+    "npm": "^6.14.15",
+    "react-draft-wysiwyg": "^1.14.7",
+    "uuid": "^8.3.2"
+  },
+  "author": "srinivasteja18",
+  "license": "ISC"
+}
