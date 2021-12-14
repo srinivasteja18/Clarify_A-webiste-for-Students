@@ -98,7 +98,7 @@ const Signup = () => {
             <RiLockPasswordFill className="auth-icons" />
           </div>
           <div className="auth-helper">
-            <label className="auth-labels">Collage</label>
+            <label className="auth-labels">College</label>
             <br />
             <input
               onChange={handleChanges("collage")}
