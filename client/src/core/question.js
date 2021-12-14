@@ -227,6 +227,10 @@ export default function Question() {
   };
 
   const handleDelete = () => {
+    if (user._id !== question.user._id) {
+      toast("You cannot delete this Post", { type: "warning" });
+      return;
+    }
     deleteQuestion(user._id, token, question._id).then((data) => {
       if (data.error) {
         toast(data.error, { type: "warning" });
@@ -302,6 +306,10 @@ export default function Question() {
   );
 
   const handleAnswerDelete = (answer) => {
+    if (user._id !== question.user._id) {
+      toast("You cannot delete this Post", { type: "warning" });
+      return;
+    }
     deleteAnswer(user._id, token, answer._id).then((data) => {
       if (data.error) {
         console.log(data.error);
