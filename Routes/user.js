@@ -10,8 +10,8 @@ const {
   UnfollowUserFollowers,
   getAllUsers,
   getFollower,
-} = require("../controllers/user");
-const { isSignedIn, isAuthenticated } = require("../controllers/auth");
+} = require("../Controllers/user");
+const { isSignedIn, isAuthenticated } = require("../Controllers/auth");
 const { getUserQuestions } = require("../Controllers/question");
 
 router.param("userId", getUserById);

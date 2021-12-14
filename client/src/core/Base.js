@@ -2,7 +2,7 @@ import React from "react";
 import Navigation from "./Navigation";
 import Footer from "./Footer";
 import SideBar from "./SideBar";
-export default function Base({ title = "Homepage", children }) {
+export default function Base({ children }) {
   return (
     <div className="whole-container">
       <Navigation />
