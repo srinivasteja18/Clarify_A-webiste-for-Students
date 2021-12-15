@@ -50,20 +50,33 @@ export default function Sidebar() {
           </NavLink>
         </li>
         {isAuthenticated() && (
-          <li className="side-bar-item">
-            <span
-              style={{ cursor: "pointer" }}
-              className="side-bar-link"
-              onClick={() => {
-                signout(() => {
-                  toast("Signout Successful!!", { type: "success" });
-                  navigate("/");
-                });
-              }}
-            >
-              SignOut
-            </span>
-          </li>
+          <>
+            <li className="side-bar-item">
+              <span
+                style={{ cursor: "pointer" }}
+                className="side-bar-link"
+                onClick={() => {
+                  navigate("/feedback");
+                }}
+              >
+                Feedback
+              </span>
+            </li>
+            <li className="side-bar-item">
+              <span
+                style={{ cursor: "pointer" }}
+                className="side-bar-link"
+                onClick={() => {
+                  signout(() => {
+                    toast("Signout Successful!!", { type: "success" });
+                    navigate("/");
+                  });
+                }}
+              >
+                SignOut
+              </span>
+            </li>
+          </>
         )}
       </ul>
     </div>

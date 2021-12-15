@@ -18,6 +18,7 @@ import EditProfile from "./user/editProfile";
 import UpdateQuestion from "./user/updateQuestion";
 import UpdateAnswer from "./user/updateAnswer";
 import About from "./core/About";
+import Feedback from "./core/feedback";
 
 export default function Rootes() {
   return (
@@ -99,6 +100,14 @@ export default function Rootes() {
           element={
             <PrivateRoute>
               <UpdateAnswer />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/feedback"
+          element={
+            <PrivateRoute>
+              <Feedback />
             </PrivateRoute>
           }
         />

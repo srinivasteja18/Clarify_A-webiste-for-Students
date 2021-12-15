@@ -740,7 +740,7 @@ input:focus {
 }
 .footer-link {
   margin: 0 0.2rem;
-  font-size: 1rem;
+  font-size: 1.2rem;
   cursor: pointer;
 }
 .footer-link:hover {
@@ -757,6 +757,76 @@ input:focus {
   cursor: pointer;
 }
 .nav-link-footer:hover {
+  color: white;
+}
+
+/* feedback */
+.contact-section {
+  max-width: 60%;
+  margin: 0 auto;
+  color: white;
+}
+.contact-section h1 {
+  text-align: center;
+  font-weight: 400;
+  font-family: "commissioner";
+}
+.contact-card {
+  max-width: 80%;
+  padding: 1rem 2rem;
+  gap: 1rem;
+  border-radius: 5px;
+  margin: 0 auto;
+  background-color: #161b22;
+  border: 1px solid #2d3135;
+  display: flex;
+}
+.contact-form {
+  min-width: 40%;
+  flex: 1;
+  padding: 1rem;
+  border-left: 1px solid #474747;
+}
+.contact-section-input {
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 5px;
+  color: rgb(230, 230, 230);
+  padding: 0.3rem 0.5rem;
+  background-color: hsl(216, 28%, 7%);
+  margin: 0.3rem 0;
+  border: 1px solid #3a3d42;
+  font-size: 0.9rem;
+  font-weight: 200;
+}
+.contact-section-input:focus {
+  border: 1px solid #469ba2;
+}
+.contact-button {
+  margin-left: 0.5rem;
+}
+.contact-card-left {
+  padding: 1rem;
+}
+.feedback-text {
+  line-height: 1.3rem;
+}
+.feedback-text p {
+  margin: 0.5rem 0;
+}
+.contact-section-details {
+  padding: 0.5rem 0;
+}
+.details-icons {
+  margin-right: 0.5rem;
+  color: #1f6feb;
+}
+.Home_section_icon {
+  margin-right: 0.5rem;
+  color: #1f6feb;
+  font-size: 1.2rem;
+}
+.Home_section_icon:hover {
   color: white;
 }
 ::-webkit-scrollbar {
@@ -957,6 +1027,15 @@ input:focus {
   .footer-section {
     flex-direction: column;
     gap: 1rem;
+  }
+  .contact-card {
+    max-width: 95%;
+    flex-direction: column;
+    padding: 1rem 0.5rem;
+  }
+  .contact-form {
+    border-left: 0;
+    border-top: 1px solid #474747;
   }
 }
 @media (max-width: 400px) {
