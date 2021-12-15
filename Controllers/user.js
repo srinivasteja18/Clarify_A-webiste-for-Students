@@ -89,6 +89,7 @@ exports.updateUser = (req, res) => {
 
 exports.getUserActivity = (req, res) => {
   Activity.find({ user: req.profile._id })
+    .sort({ createdAt: "desc" })
     .populate("question", "_id text upvotes description")
     .exec((err, activities) => {
       if (err) {

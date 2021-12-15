@@ -173,32 +173,36 @@ export default function Profile() {
             <div className="questions-container profile-summary-right">
               <h2 className="activity-name">Your Activity</h2>
               {activities.length ? (
-                activities.map((activity, index) => (
-                  <div
-                    onClick={() => {
-                      navigate("/questions/question", {
-                        state: activity.question,
-                      });
-                    }}
-                    key={index}
-                    className="question-card activity-card"
-                  >
-                    <div className="activity-status-div">
-                      <div className="activity-status">
-                        <p>{activity.status}</p>
+                activities.map((activity, index) =>
+                  activity.question ? (
+                    <div
+                      onClick={() => {
+                        navigate("/questions/question", {
+                          state: activity.question,
+                        });
+                      }}
+                      key={index}
+                      className="question-card activity-card"
+                    >
+                      <div className="activity-status-div">
+                        <div className="activity-status">
+                          <p>{activity.status}</p>
+                        </div>
+                        <div className="question-status">
+                          <p className="question-status-number">
+                            {activity.question.upvotes}
+                          </p>
+                          <p>Upvotes</p>
+                        </div>
                       </div>
-                      <div className="question-status">
-                        <p className="question-status-number">
-                          {activity.question.upvotes}
-                        </p>
-                        <p>Upvotes</p>
+                      <div className="question-summary">
+                        <h2>{activity.question.text}</h2>
                       </div>
                     </div>
-                    <div className="question-summary">
-                      <h2>{activity.question.text}</h2>
-                    </div>
-                  </div>
-                ))
+                  ) : (
+                    <div></div>
+                  )
+                )
               ) : (
                 <div>No Activity Found!!</div>
               )}
