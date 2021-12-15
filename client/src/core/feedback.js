@@ -6,13 +6,14 @@ import "react-toastify/dist/ReactToastify.min.css";
 import { FaGithub, FaLinkedin, FaMobile, FaEnvelope } from "react-icons/fa";
 import Navigation from "./Navigation";
 import Footer from "./Footer";
+import { useNavigate } from "react-router-dom";
 export default function Feedback() {
+  const navigate = useNavigate();
   const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const handleOnClick = (e) => {
     e.preventDefault();
-    if (name === "" || email === "") {
+    if (name === "") {
       toast("Enter the required details", { type: "error" });
       return;
     }
@@ -29,10 +30,10 @@ export default function Feedback() {
       )
       .then((res) => {
         console.log("success");
-        toast("Message sent successfully", { type: "success" });
+        toast("Thankyou for your Feedback", { type: "success" });
         setName("");
-        setEmail("");
         setMessage("");
+        navigate("/");
       })
       .catch((err) => {
         console.log(err);
