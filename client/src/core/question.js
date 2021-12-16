@@ -131,7 +131,7 @@ export default function Question() {
 
   const handleUpVote = (e, answer, index) => {
     if (user._id === answer.user._id) {
-      toast("You cannot downvote your own Post", { type: "warning" });
+      toast("You cannot Upvote your own Post", { type: "warning" });
       return;
     }
     setVoteLoading(true);
@@ -142,7 +142,6 @@ export default function Question() {
       updateAnswerDownvotes(user._id, token, answer).then((data) => {
         if (data.error) {
           toast(data.error, { type: "warning" });
-
           console.log("Answer upvote not updated", data.error);
         } else {
           console.log("sucess");

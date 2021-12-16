@@ -104,8 +104,8 @@ exports.updateUpvotes = (req, res) => {
     });
   }
   if (flag) return;
-  const admin = req.question.user;
-  admin.reputation -= 1;
+  const admin = req.answer.user;
+  admin.reputation += 1;
   let downvotes = [];
   if (user.adownvotes.length)
     downvotes = user.adownvotes.filter(
