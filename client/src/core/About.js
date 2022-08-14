@@ -19,7 +19,7 @@ export default function About() {
           </h1>
           <p className="welcome">Welcome!! </p>
           <p className="about-description">
-            Iam Srinivas Teja,final year student from NIT Raipur. Clarify
+            Iam Srinivas Teja, final year student from NIT Raipur. Clarify
             starts with an idea to help students. Students can post their
             queries, anything that can be related to whether its academic,
             programming, development, or it may be non-academic about collages
