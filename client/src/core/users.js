@@ -25,13 +25,13 @@ export default function Users() {
       if (data.error) {
         console.log("Error in fetching questions", data.error);
       } else {
+        setcurUser(data);
         setRemUsers(data);
         setSearchUsers(data);
         getUser(user._id, token).then((val) => {
           if (val.error) {
             console.log("user not found!");
           } else {
-            setcurUser(val);
             if (val.following.length) {
               const temp = [];
               const temp2 = [];
@@ -47,7 +47,6 @@ export default function Users() {
                   temp2.push(user);
                 }
               });
-              setcurUser(temp);
               setRemUsers(temp2);
               setSearchFollowers(temp);
               setSearchUsers(temp2);

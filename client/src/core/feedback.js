@@ -7,6 +7,7 @@ import { FaGithub, FaLinkedin, FaMobile, FaEnvelope } from "react-icons/fa";
 import Navigation from "./Navigation";
 import Footer from "./Footer";
 import { useNavigate } from "react-router-dom";
+
 export default function Feedback() {
   const navigate = useNavigate();
   const [name, setName] = useState("");
