@@ -35,5 +35,8 @@
     "uuid": "^8.3.2"
   },
   "author": "srinivasteja18",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+  }
 }
