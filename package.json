@@ -4,10 +4,9 @@
   "description": "A website for clarifying the doubts",
   "main": "index.js",
   "scripts": {
-    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
     "client": "cd client && npm start",
-    "client:build": "cd client && npm run build",
-    "start": "nodemon app.js",
+    "build": "npm i && cd client && npm i && npm run build",
+    "start": "node app.js && npm run client",
     "dev": "concurrently --kill-others-on-fail \"npm run client\" \"npm run start\""
   },
   "dependencies": {
