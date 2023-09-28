@@ -837,7 +837,14 @@ input:focus {
   background-color: #161b22;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1000px) {
+  .middle-section {
+    max-width: 95%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
   .nav-container {
     max-width: 100%;
   }
